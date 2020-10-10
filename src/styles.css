@@ -1,0 +1,82 @@
+.App {
+  font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.row {
+  margin-top: 10px;
+}
+
+.row label {
+  display: inline-block;
+  width: 150px;
+}
+
+.button-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+.button-container button {
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  background-color: lightblue;
+  color: black;
+  font-weight: 600;
+  box-shadow: 2px 2px 2px #535353;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.button-container button:focus {
+  outline: none;
+}
+
+.button-container button:hover {
+  transform: scale(0.98);
+  box-shadow: 1px 1px 2px #535353;
+}
+
+.button-container button:nth-child(2) {
+  background-color: lightcoral;
+}
+
+table {
+  width: 70%;
+}
+
+.table-row {
+  text-align: center;
+}
+
+.table-row th {
+  background-color: lightblue;
+  text-transform: uppercase;
+  padding: 10px 0;
+}
+
+.table-row {
+  background-color: lightcyan;
+}
+
+.table-row:nth-child(odd) {
+  background-color: #aeebae;
+}
+
+.table-row td {
+  padding: 10px 0;
+}
