@@ -5,6 +5,9 @@ export default function App() {
   const [input, setInput] = useState("");
   const [storedInputs, setStoredInputs] = useState([]);
   const [search, setSearch] = useState("");
+  const [inEditMode, setInEditMode] = useState(false);
+
+  console.log(storedInputs);
 
   const onInputChange = (event) => {
     setInput(event.target.value);
@@ -21,6 +24,16 @@ export default function App() {
 
   const onChange = (event) => {
     setSearch(([event.target.name] = event.target.value));
+  };
+
+  const changeEditMode = () => {
+    if (storedInputs.length > 0) {
+      setInEditMode(!inEditMode);
+    }
+  };
+
+  const renderEditView = () => {
+    return <input defaultValue={input}></input>;
   };
 
   let filteredProducts = storedInputs.filter((product) => {
@@ -53,7 +66,7 @@ export default function App() {
 
       <div className="button-container">
         <button onClick={() => addColumn(input)}>Add column</button>
-        <button>Edit Label</button>
+        <button onClick={changeEditMode}>Edit Label</button>
       </div>
 
       <table className="table">
@@ -67,7 +80,7 @@ export default function App() {
             return (
               <tr key={index} className="table-row">
                 <td>{index + 1}</td>
-                <td>{input}</td>
+                {inEditMode ? renderEditView() : <td>{input}</td>}
               </tr>
             );
           })}
